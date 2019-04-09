@@ -4,9 +4,10 @@
 \alias{enmtools.glm}
 \title{Takes an emtools.species object with presence and background points, and builds a GLM}
 \usage{
-enmtools.glm(species, env, f = NULL, test.prop = 0, eval = TRUE,
-  nback = 1000, report = NULL, overwrite = FALSE, rts.reps = 0,
-  weights = "equal", bg.source = "default", ...)
+enmtools.glm(species, env, f = NULL, test.prop = 0,
+  test.type = "random", eval = TRUE, nback = 1000, report = NULL,
+  overwrite = FALSE, rts.reps = 0, weights = "equal",
+  bg.source = "default", ...)
 }
 \arguments{
 \item{species}{An enmtools.species object}
@@ -15,7 +16,9 @@ enmtools.glm(species, env, f = NULL, test.prop = 0, eval = TRUE,
 
 \item{f}{Standard GLM formula}
 
-\item{test.prop}{Proportion of data to withhold randomly for model evaluation, or "block" for spatially structured evaluation.}
+\item{test.prop}{Proportion of data to withhold for model evaluation}
+
+\item{test.type}{Method for withholding test data.  "random" selects random points from the presences, "block" uses the four corner approach from ENMEval, and "blob" uses the sampling approach from the blob rangebreak test to set aside spatial partitions.}
 
 \item{eval}{Determines whether model evaluation should be done.  Turned on by default, but moses turns it off to speed things up.}
 

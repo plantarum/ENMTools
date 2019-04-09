@@ -27,7 +27,7 @@ overlap.plot A two dimensional plot of an ENM
 visualize.overlap, Makes a contour map of suitability of habitat in environment space for two models
 }
 \examples{
-data(iberolacerta)
+data(iberolacerta.clade)
 ar <- iberolacerta.clade$species$aranica
 au <- iberolacerta.clade$species$aurelioi
 data(euro.worldclim)
