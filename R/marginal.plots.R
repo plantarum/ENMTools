@@ -96,14 +96,16 @@ marginal.plots <- function(model, env, layer, standardize = TRUE){
                                         rep("Presence", 100),
                                         rep("Background", 100)))
 
-  response.plot <- qplot(layer, value, geom = "line", data = plot.df.long,
-                         xlab = layer, ylab = "Value", colour = source, linetype = source) +
-                          theme_bw() + scale_color_manual(values = c("green4", "red", "blue")) +
-                          scale_linetype_manual(values = c( "dashed", "twodash", "solid")) +
-                          theme(plot.title = element_text(hjust = 0.5)) +
-                          theme(plot.title = element_text(hjust = 0.5)) +
-                          theme(legend.title=element_blank())
-
+  pres.points <- data.frame(prenv = pres.env, value = 0)
+  response.plot <- ggplot(plot.df.long, aes(layer, value)) +
+    geom_line(aes(color = source, linetype = source)) +
+    geom_rug(data = pres.points, aes(prenv), alpha = 0.15,
+             color = "red") +
+    theme_bw() + xlab(layer) + ylab("Value") +
+    scale_color_manual(values = c("green4", "red", "blue")) +
+    scale_linetype_manual(values = c("dashed", 
+                                     "twodash", "solid")) +
+    theme(legend.title = element_blank())
 
   return(response.plot)
 
