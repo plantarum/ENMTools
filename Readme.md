@@ -15,7 +15,12 @@ Huron, M. Simões, Teresa L. Iglesias, and R. Dinnage. 2019. ENMTools
 
 ------------------------------------------------------------------------
 
-Installation
+Table of Contents
+=================
+1. [Installation](#installation)
+2. [Interacting with ENMTools](#interacting)
+3. [Metrics, ](#metrics)
+<a name=installation>Installation</a>
 ============
 
 At present, ENMTools is downloadable from
@@ -51,7 +56,7 @@ library(ENMTools)
 
 ------------------------------------------------------------------------
 
-Interacting with ENMTools
+<a name=interacting>Interacting with ENMTools</a>
 =========================
 
 ### Creating enmtools.species objects
@@ -829,7 +834,7 @@ monticola.bc <- enmtools.bc(monticola, env, test.prop = 0.2)
 monticola.mx <- enmtools.maxent(monticola, env, test.prop = 0.2)
 ```
 
-Metrics: breadth, correlation, and overlap
+<a name=metrics>Metrics: breadth, correlation, and overlap</a>
 ------------------------------------------
 
 ENMTools provides a number of metrics for ENMs and for similarities
